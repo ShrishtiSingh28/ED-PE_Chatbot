@@ -1,0 +1,585 @@
+{
+    "language_selection": {
+        "question": {
+            "en": "Choose your preferred language:",
+            "options": ["English", "हिंदी (Hindi)"]
+        }
+    },
+    "concern_selection": {
+        "question": {
+            "en": "Choose your concern:",
+            "hi": "अपनी समस्या चुनें:",
+            "options": {
+                "en": ["Erectile Dysfunction", "Premature Ejaculation"],
+                "hi": ["शिथिल लिंग समस्या", "शीघ्रपतन"]
+            }
+        }
+    },
+    "ed_questions": {
+        "en": [
+            {
+                "id": "Q1",
+                "text": "Are you experiencing difficulty in getting or maintaining an erection?",
+                "options": ["Yes", "No"],
+                "next": {
+                    "Yes": "Q2",
+                    "No": "END"
+                }
+            },
+            {
+                "id": "Q2",
+                "text": "Did this issue start suddenly or gradually over time?",
+                "options": ["Suddenly", "Gradually"],
+                "next": {
+                    "Suddenly": "Q3",
+                    "Gradually": "Q4"
+                }
+            },
+            {
+                "id": "Q3",
+                "text": "Have you or your partner been engaging in timed intercourse for pregnancy planning?",
+                "options": ["Yes", "No"],
+                "analysis_type": "psychological",
+                "next": {
+                    "Yes": "Q4",
+                    "No": "Q4"
+                }
+            },
+            {
+                "id": "Q4",
+                "text": "Do you have any medical conditions (e.g., diabetes, high blood pressure, heart disease)?",
+                "options": ["Yes", "No"],
+                "analysis_type": "vascular",
+                "next": {
+                    "Yes": "Q5",
+                    "No": "Q5"
+                }
+            },
+            {
+                "id": "Q5",
+                "text": "Have you been feeling stressed, anxious, or facing relationship issues?",
+                "options": ["Yes", "No"],
+                "analysis_type": "psychological",
+                "next": {
+                    "Yes": "Q6",
+                    "No": "Q6"
+                }
+            },
+            {
+                "id": "Q6",
+                "text": "Do you still experience morning erections?",
+                "options": ["Yes", "No"],
+                "next": {
+                    "Yes": "Q7",
+                    "No": "Q8"
+                }
+            },
+            {
+                "id": "Q7",
+                "text": "Do you feel highly anxious or nervous before sex?",
+                "options": ["Yes", "No"],
+                "analysis_type": "psychological",
+                "next": {
+                    "Yes": "Q8",
+                    "No": "Q8"
+                }
+            },
+            {
+                "id": "Q8",
+                "text": "Have you noticed a decrease in sex drive (libido)?",
+                "options": ["Yes", "No"],
+                "analysis_type": "hormonal",
+                "next": {
+                    "Yes": "Q9",
+                    "No": "Q9"
+                }
+            },
+            {
+                "id": "Q9",
+                "text": "Do you smoke, drink excessively, or have an inactive lifestyle?",
+                "options": ["Yes", "No"],
+                "analysis_type": "lifestyle",
+                "next": {
+                    "Yes": "Q10",
+                    "No": "Q10"
+                }
+            },
+            {
+                "id": "Q10",
+                "text": "Have you experienced weight gain, fatigue, or reduced muscle mass?",
+                "options": ["Yes", "No"],
+                "analysis_type": "hormonal",
+                "next": {
+                    "Yes": "Q11",
+                    "No": "Q11"
+                }
+            },
+            {
+                "id": "Q11",
+                "text": "Are you taking any medications (e.g., antidepressants, BP meds)?",
+                "options": ["Yes", "No"],
+                "analysis_type": "medication",
+                "next": {
+                    "Yes": "Q12",
+                    "No": "Q12"
+                }
+            },
+            {
+                "id": "Q12",
+                "text": "Have you had any pelvic or genital injuries or surgeries (e.g., prostate surgery)?",
+                "options": ["Yes", "No"],
+                "analysis_type": "surgical",
+                "next": {
+                    "Yes": "Q13",
+                    "No": "Q13"
+                }
+            },
+            {
+                "id": "Q13",
+                "text": "Do you experience penile curvature, pain, or discomfort during erection?",
+                "options": ["Yes", "No"],
+                "analysis_type": "peyronies",
+                "next": {
+                    "Yes": "Q14",
+                    "No": "Q14"
+                }
+            },
+            {
+                "id": "Q14",
+                "text": "Have you had penile infections like balanitis (pain, redness, discharge)?",
+                "options": ["Yes", "No"],
+                "analysis_type": "infection",
+                "next": {
+                    "Yes": "Q15",
+                    "No": "Q15"
+                }
+            },
+            {
+                "id": "Q15",
+                "text": "Do you snore loudly, feel tired during the day, or wake up gasping at night?",
+                "options": ["Yes", "No"],
+                "analysis_type": "sleep",
+                "next": {
+                    "Yes": "Q16",
+                    "No": "Q16"
+                }
+            },
+            {
+                "id": "Q16",
+                "text": "Do you have an autoimmune condition or frequent joint pain/inflammation?",
+                "options": ["Yes", "No"],
+                "analysis_type": "autoimmune",
+                "next": {
+                    "Yes": "Q17",
+                    "No": "Q17"
+                }
+            },
+            {
+                "id": "Q17",
+                "text": "Do you have groin, lower abdominal or perineal pain along with erection difficulty?",
+                "options": ["Yes", "No"],
+                "analysis_type": "pelvic",
+                "next": {
+                    "Yes": "Q18",
+                    "No": "Q18"
+                }
+            },
+            {
+                "id": "Q18",
+                "text": "Do you frequently masturbate with a tight grip that intercourse doesn't match?",
+                "options": ["Yes", "No"],
+                "analysis_type": "death_grip",
+                "next": {
+                    "Yes": "Q19",
+                    "No": "Q19"
+                }
+            },
+            {
+                "id": "Q19",
+                "text": "Have you used anabolic steroids, recreational drugs, or any other substances that could impact sexual function?",
+                "options": ["Yes", "No"],
+                "analysis_type": "drug",
+                "next": {
+                    "Yes": "END",
+                    "No": "END"
+                }
+            }
+        ],
+        "hi": [
+            {
+                "id": "Q1",
+                "text": "क्या आपको लिंग खड़ा करने या उसे बनाए रखने में कठिनाई हो रही है?",
+                "options": ["हाँ", "नहीं"],
+                "next": {
+                    "हाँ": "Q2",
+                    "नहीं": "END"
+                }
+            }
+        ]
+    },
+    "pe_questions": {
+        "en": [
+            {
+                "id": "Q1",
+                "text": "Do you ejaculate within one minute of penetration or before you want to?",
+                "options": ["Yes", "No"],
+                "next": {
+                    "Yes": "Q2",
+                    "No": "END"
+                }
+            },
+            {
+                "id": "Q2",
+                "text": "Has this issue been present since your first sexual experience, or did it start later?",
+                "options": ["Lifelong", "Acquired"],
+                "next": {
+                    "Lifelong": "Q3",
+                    "Acquired": "Q4"
+                }
+            },
+            {
+                "id": "Q3",
+                "text": "Have you ever been able to control ejaculation during sex or masturbation?",
+                "options": ["Yes", "No"],
+                "analysis_type": "lifelong_pe",
+                "next": {
+                    "Yes": "Q5",
+                    "No": "END"
+                }
+            },
+            {
+                "id": "Q4",
+                "text": "Did this issue start suddenly or gradually over time?",
+                "options": ["Suddenly", "Gradually"],
+                "next": {
+                    "Suddenly": "Q6",
+                    "Gradually": "Q7"
+                }
+            },
+            {
+                "id": "Q5",
+                "text": "Do you often worry about how well you'll perform during sex, even before it begins?",
+                "options": ["Yes", "No"],
+                "analysis_type": "performance_anxiety",
+                "next": {
+                    "Yes": "Q6",
+                    "No": "Q8"
+                }
+            },
+            {
+                "id": "Q6",
+                "text": "Do you notice racing thoughts, overthinking, or fear of disappointing your partner?",
+                "options": ["Yes", "No"],
+                "analysis_type": "performance_anxiety",
+                "next": {
+                    "Yes": "END",
+                    "No": "Q9"
+                }
+            },
+            {
+                "id": "Q7",
+                "text": "Have you been experiencing chronic stress, burnout, or emotional pressure recently?",
+                "options": ["Yes", "No"],
+                "analysis_type": "psychological_pe",
+                "next": {
+                    "Yes": "END",
+                    "No": "Q10"
+                }
+            },
+            {
+                "id": "Q8",
+                "text": "Do you have any diagnosed health conditions like prostatitis, diabetes, or thyroid issues?",
+                "options": ["Yes", "No"],
+                "analysis_type": "acquired_pe",
+                "next": {
+                    "Yes": "END",
+                    "No": "Q11"
+                }
+            },
+            {
+                "id": "Q9",
+                "text": "Do you frequently masturbate or watch porn (more than 4-5 times a week)?",
+                "options": ["Yes", "No"],
+                "analysis_type": "sensory_overload",
+                "next": {
+                    "Yes": "END",
+                    "No": "Q12"
+                }
+            },
+            {
+                "id": "Q10",
+                "text": "Do you feel a very strong sensation or tingling in the penis during sex that's hard to control?",
+                "options": ["Yes", "No"],
+                "analysis_type": "hypersensitivity",
+                "next": {
+                    "Yes": "END",
+                    "No": "Q13"
+                }
+            },
+            {
+                "id": "Q11",
+                "text": "Do you often masturbate by rubbing against a bed, pillow, or surface (not using your hand)?",
+                "options": ["Yes", "No"],
+                "analysis_type": "atypical_sensory",
+                "next": {
+                    "Yes": "END",
+                    "No": "Q14"
+                }
+            },
+            {
+                "id": "Q12",
+                "text": "Do you feel a burning, pain, or discomfort during or after ejaculation?",
+                "options": ["Yes", "No"],
+                "analysis_type": "infection_pe",
+                "next": {
+                    "Yes": "END",
+                    "No": "Q15"
+                }
+            },
+            {
+                "id": "Q13",
+                "text": "Are you circumcised or have foreskin issues like phimosis or balanitis?",
+                "options": ["Yes", "No"],
+                "analysis_type": "foreskin",
+                "next": {
+                    "Yes": "END",
+                    "No": "Q16"
+                }
+            },
+            {
+                "id": "Q14",
+                "text": "Do you have a history of mood swings, impulsivity, or depression?",
+                "options": ["Yes", "No"],
+                "analysis_type": "serotonin",
+                "next": {
+                    "Yes": "END",
+                    "No": "Q17"
+                }
+            },
+            {
+                "id": "Q15",
+                "text": "Do you ejaculate even before penetration or with minimal stimulation?",
+                "options": ["Yes", "No"],
+                "analysis_type": "reflex",
+                "next": {
+                    "Yes": "END",
+                    "No": "Q18"
+                }
+            },
+            {
+                "id": "Q16",
+                "text": "Are you on medications like antidepressants or BP medications?",
+                "options": ["Yes", "No"],
+                "analysis_type": "medication_pe",
+                "next": {
+                    "Yes": "END",
+                    "No": "Q19"
+                }
+            },
+            {
+                "id": "Q17",
+                "text": "Do you masturbate with a very tight grip that normal sex doesn't match? (Death Grip Syndrome)",
+                "options": ["Yes", "No"],
+                "analysis_type": "death_grip_pe",
+                "next": {
+                    "Yes": "END",
+                    "No": "END"
+                }
+            }
+        ],
+        "hi": [
+            {
+                "id": "Q1",
+                "text": "क्या आप प्रवेश के एक मिनट के भीतर या चाहने से पहले ही स्खलन कर लेते हैं?",
+                "options": ["हाँ", "नहीं"],
+                "next": {
+                    "हाँ": "Q2",
+                    "नहीं": "END"
+                }
+            }
+        ]
+    },
+    "final_analysis": {
+        "ed": {
+            "en": {
+                "psychological": {
+                    "category": "Psychological ED",
+                    "causes": "Stress, anxiety, performance pressure, timed sex",
+                    "specialist": "Psychiatrist / Sexologist",
+                    "description": "Your symptoms suggest psychological factors are playing a significant role in your erectile difficulties. This is common and treatable with professional help."
+                },
+                "vascular": {
+                    "category": "Vascular ED",
+                    "causes": "Diabetes, high blood pressure, cardiovascular disease",
+                    "specialist": "Andrologist",
+                    "description": "Your symptoms indicate potential vascular (blood flow) issues affecting your erectile function. This requires medical evaluation."
+                },
+                "neurological": {
+                    "category": "Neurological ED",
+                    "causes": "Spinal cord injury, nerve damage, multiple sclerosis",
+                    "specialist": "Andrologist"
+                },
+                "hormonal": {
+                    "category": "Hormonal ED",
+                    "causes": "Low testosterone, thyroid imbalance, fatigue, muscle loss",
+                    "specialist": "Andrologist"
+                },
+                "lifestyle": {
+                    "category": "Lifestyle-induced ED",
+                    "causes": "Smoking, alcohol use, obesity, sedentary lifestyle",
+                    "specialist": "Psychiatrist / Sexologist"
+                },
+                "medication": {
+                    "category": "Medication-induced ED",
+                    "causes": "Antidepressants, antihypertensives, others",
+                    "specialist": "Psychiatrist / Sexologist"
+                },
+                "surgical": {
+                    "category": "Post-Surgical/Injury ED",
+                    "causes": "Pelvic trauma, prostate surgery",
+                    "specialist": "Andrologist"
+                },
+                "peyronies": {
+                    "category": "Peyronie's Disease",
+                    "causes": "Painful penile curvature",
+                    "specialist": "Andrologist"
+                },
+                "infection": {
+                    "category": "Infection-related ED",
+                    "causes": "Balanitis, recurrent penile infections",
+                    "specialist": "Andrologist"
+                },
+                "sleep": {
+                    "category": "Sleep Apnoea-induced ED",
+                    "causes": "Loud snoring, poor sleep, daytime fatigue",
+                    "specialist": "Andrologist"
+                },
+                "autoimmune": {
+                    "category": "Autoimmune/Inflammation ED",
+                    "causes": "Rheumatoid arthritis, lupus, Crohn's disease",
+                    "specialist": "Andrologist"
+                },
+                "pelvic": {
+                    "category": "Pelvic Floor Dysfunction",
+                    "causes": "Groin/perineal pain, weak pelvic muscles",
+                    "specialist": "Andrologist"
+                },
+                "death_grip": {
+                    "category": "Death Grip Syndrome",
+                    "causes": "Habitual tight-grip masturbation",
+                    "specialist": "Psychosexual Therapist / Sexologist"
+                },
+                "drug": {
+                    "category": "Drug or Steroid-induced ED",
+                    "causes": "Anabolic steroids, recreational drugs",
+                    "specialist": "Andrologist"
+                },
+                "mixed": {
+                    "category": "Mixed Factors ED",
+                    "causes": "Multiple contributing factors",
+                    "specialist": "Andrologist"
+                }
+            },
+            "hi": {
+                "psychological": {
+                    "category": "मनोवैज्ञानिक ईडी",
+                    "causes": "तनाव, चिंता, प्रदर्शन का दबाव",
+                    "specialist": "मनोचिकित्सक / यौन विशेषज्ञ"
+                },
+                "vascular": {
+                    "category": "वास्कुलर ईडी",
+                    "causes": "मधुमेह, उच्च रक्तचाप, हृदय रोग",
+                    "specialist": "एंड्रोलॉजिस्ट"
+                }
+            }
+        },
+        "pe": {
+            "en": {
+                "psychological_pe": {
+                    "category": "Psychological PE",
+                    "causes": "Stress, anxiety, overthinking",
+                    "specialist": "Psychiatrist",
+                    "description": "Your responses indicate that psychological factors are contributing to your PE. This is very common and can be effectively treated."
+                },
+                "lifelong_pe": {
+                    "category": "Lifelong PE",
+                    "causes": "Genetic/neurological factors",
+                    "specialist": "Psychiatrist",
+                    "description": "Your history suggests a lifelong pattern of PE, which may have a genetic or neurological basis. This can be managed with appropriate treatment."
+                },
+                "acquired_pe": {
+                    "category": "Acquired PE",
+                    "causes": "Diabetes, thyroid, prostatitis",
+                    "specialist": "Andrologist"
+                },
+                "performance_anxiety": {
+                    "category": "Performance Anxiety",
+                    "causes": "Fear of failure, overthinking",
+                    "specialist": "Psychiatrist"
+                },
+                "sensory_overload": {
+                    "category": "Sensory Overload",
+                    "causes": "Porn/masturbation excess",
+                    "specialist": "Psychiatrist"
+                },
+                "hypersensitivity": {
+                    "category": "Penile Hypersensitivity",
+                    "causes": "Nerve overstimulation",
+                    "specialist": "Psychiatrist"
+                },
+                "atypical_sensory": {
+                    "category": "Atypical Sensory Conditioning",
+                    "causes": "Unusual masturbation habits",
+                    "specialist": "Psychiatrist"
+                },
+                "infection_pe": {
+                    "category": "Genital Infection",
+                    "causes": "UTI, STI, prostatitis",
+                    "specialist": "Venereologist/Andrologist"
+                },
+                "foreskin": {
+                    "category": "Foreskin-related PE",
+                    "causes": "Phimosis, balanitis",
+                    "specialist": "Andrologist"
+                },
+                "serotonin": {
+                    "category": "Low Serotonin PE",
+                    "causes": "Depression, mood swings",
+                    "specialist": "Psychiatrist"
+                },
+                "reflex": {
+                    "category": "Reflex-Based PE",
+                    "causes": "Spinal/neurological reflexes",
+                    "specialist": "Psychiatrist"
+                },
+                "medication_pe": {
+                    "category": "Medication-Related PE",
+                    "causes": "SSRIs, BP meds, etc.",
+                    "specialist": "Psychiatrist"
+                },
+                "death_grip_pe": {
+                    "category": "Death Grip Syndrome",
+                    "causes": "Tight grip conditioning",
+                    "specialist": "Psychiatrist"
+                },
+                "nonspecific": {
+                    "category": "Non-specific PE",
+                    "causes": "Multifactorial, unclear",
+                    "specialist": "Psychiatrist"
+                }
+            },
+            "hi": {
+                "lifelong_pe": {
+                    "category": "जन्मजात पीई",
+                    "causes": "आनुवंशिक/तंत्रिका संबंधी",
+                    "specialist": "मनोचिकित्सक"
+                },
+                "acquired_pe": {
+                    "category": "बाद में विकसित पीई",
+                    "causes": "मधुमेह, थायराइड, प्रोस्टेटाइटिस",
+                    "specialist": "एंड्रोलॉजिस्ट"
+                }
+            }
+        }
+    }
+} 
