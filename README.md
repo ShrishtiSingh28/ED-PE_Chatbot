@@ -40,12 +40,5 @@ streamlit run streamlit_app.py
 4. Review the analysis and recommendations
 5. Consult with the recommended specialist
 
-## Disclaimer
 
-This is a self-assessment tool and not a substitute for professional medical advice. Please consult a healthcare provider for proper diagnosis and treatment.
-
-## Security and Privacy
-
-- No personal data is stored
-- All interactions are session-based
 - No external data sharing 
