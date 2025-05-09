@@ -481,7 +481,7 @@ class ChatbotCore:
             "Do you masturbate with a very tight grip that normal sex doesn't match? (Death Grip Syndrome)": "Kya aap masturbation ke time bahut tight grip use karte hain jo normal sex ke time match nahi karta? (Death Grip Syndrome)",
 
             
-            "Are you experiencing difficulty in getting or maintaining an erection?": "Kya aapko erection get karne ya maintain karne mein difficulty ho rahi hai?",
+            "Are you experiencing difficulty in getting or maintaining an erection?": "Kya apko erection laane me ya barkaraar rakhne me dikkat hoti hai?",
             "Have you or your partner been engaging in timed intercourse for pregnancy planning?": "Kya aap ya aapki partner pregnancy planning ke liye timed intercourse kar rahe hain?",
             "Do you have any medical conditions (e.g., diabetes, high blood pressure, heart disease)?": "Kya aapko koi medical conditions hain (jaise diabetes, high BP, heart disease)?",
             "Have you been feeling stressed, anxious, or facing relationship issues?": "Kya aap stressed, anxious feel kar rahe hain, ya relationship issues face kar rahe hain?",
