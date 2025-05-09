@@ -31,9 +31,9 @@ class ChatbotCore:
             return json.load(f)
     
     def _initialize_flowcharts(self):
-        # PE Flowchart - Updated with modules
+        
         self.pe_flowchart = {
-            # MODULE 1: DURATION & HISTORY
+            
             "Q1": Question(
                 text="Do you ejaculate within one minute of penetration or before you want to?",
                 options=["Yes", "No"],
@@ -54,7 +54,7 @@ class ChatbotCore:
                     "Acquired": "Q4"
                 }
             ),
-            # MODULE 2: PSYCHOLOGICAL & PERFORMANCE PROFILE
+            
             "Q3": Question(
                 text="Have you ever been able to control ejaculation during sex or masturbation?",
                 options=["Yes", "No"],
@@ -107,7 +107,7 @@ class ChatbotCore:
                     "No": "Q10"
                 }
             ),
-            # MODULE 3: HABITS & SENSORY PROFILE
+            
             "Q8": Question(
                 text="Do you have any diagnosed health conditions like prostatitis, diabetes, or thyroid issues?",
                 options=["Yes", "No"],
@@ -168,7 +168,7 @@ class ChatbotCore:
                     "No": "Q15"
                 }
             ),
-            # MODULE 4: STRUCTURAL & NEUROLOGICAL CHECK
+            #
             "Q13": Question(
                 text="Are you circumcised or have foreskin issues like phimosis or balanitis?",
                 options=["Yes", "No"],
@@ -235,7 +235,7 @@ class ChatbotCore:
             )
         }
 
-        # ED Flowchart - Updated with optimized flow and correct specialist referrals
+        
         self.ed_flowchart = {
             "Q1": Question(
                 text="Are you experiencing difficulty in getting or maintaining an erection?",
@@ -459,9 +459,9 @@ class ChatbotCore:
             )
         }
 
-        # Hindi translations
+        
         self.hindi_translations = {
-            # PE Questions with minimal translation
+            
             "Do you ejaculate within one minute of penetration or before you want to?": "Kya aap penetration ke ek minute ke andar ya jab aap chahte hain usse pehle ejaculate ho jata hai?",
             "Has this issue been present since your first sexual experience, or did it start later?": "Kya ye problem first sexual experience se hai, ya baad mein start hui?",
             "Have you ever been able to control ejaculation during sex or masturbation?": "Kya aap kabhi sex ya masturbation ke time ejaculation ko control kar paye hain?",
@@ -480,7 +480,7 @@ class ChatbotCore:
             "Are you on medications like antidepressants or BP medications?": "Kya aap koi dawai le rahe hain jaise depression ki ya BP ki dawai?",
             "Do you masturbate with a very tight grip that normal sex doesn't match? (Death Grip Syndrome)": "Kya aap masturbation ke time bahut tight grip use karte hain jo normal sex ke time match nahi karta? (Death Grip Syndrome)",
 
-            # ED Questions with minimal translation
+            
             "Are you experiencing difficulty in getting or maintaining an erection?": "Kya aapko erection get karne ya maintain karne mein difficulty ho rahi hai?",
             "Have you or your partner been engaging in timed intercourse for pregnancy planning?": "Kya aap ya aapki partner pregnancy planning ke liye timed intercourse kar rahe hain?",
             "Do you have any medical conditions (e.g., diabetes, high blood pressure, heart disease)?": "Kya aapko koi medical conditions hain (jaise diabetes, high BP, heart disease)?",
@@ -501,7 +501,7 @@ class ChatbotCore:
             "Are you taking any medications (e.g., antidepressants, BP meds)?": "Kya aap koi dawai le rahe hain jaise depression ki ya BP ki dawai?",
             "Have you used anabolic steroids, recreational drugs, or any other substances that could impact sexual function?": "Kya aapne body banane ki dawa, nashe wali dawayein, ya koi aur cheez li hai jo sexual function ko affect kar sakti hai?",
 
-            # Common Options - Keep in English
+            
             "Yes": "Yes",
             "No": "No",
             "Suddenly": "Suddenly",
@@ -509,7 +509,7 @@ class ChatbotCore:
             "Lifelong": "Lifelong",
             "Acquired": "Acquired",
 
-            # Categories - Keep medical terms in English
+            
             "No Concern": "No Concern",
             "Performance Anxiety": "Performance Anxiety",
             "Psychological PE": "Psychological PE",
@@ -528,7 +528,7 @@ class ChatbotCore:
             "Penile Hypersensitivity": "Penile Hypersensitivity",
             "Atypical Sensory Conditioning": "Atypical Sensory Conditioning",
 
-            # Specialists - Keep in English
+            
             "No referral needed": "No referral needed",
             "Refer to Psychiatrist": "Refer to Psychiatrist",
             "Refer to Andrologist": "Refer to Andrologist",
@@ -542,7 +542,7 @@ class ChatbotCore:
             "Refer to Psychiatrist/Sexologist": "Refer to Psychiatrist/Sexologist",
             "Refer to Psychosexual Therapist/Sexologist": "Refer to Psychosexual Therapist/Sexologist",
 
-            # Update the "Choose your concern" text
+            \
             "Choose your concern": "Choose your concern"
         }
 
@@ -560,7 +560,7 @@ class ChatbotCore:
     
     def get_concern_options(self) -> List[str]:
         """Get available concern options in current language."""
-        # Always return English terms regardless of language setting
+        
         return ["Premature Ejaculation", "Erectile Dysfunction"]
     
     def set_concern(self, concern: str) -> None:
@@ -589,13 +589,13 @@ class ChatbotCore:
 
     def _translate_answer_to_english(self, hindi_answer: str) -> str:
         """Translate Hindi answer back to English for internal logic."""
-        # Create reverse mapping
+        
         reverse_translations = {v: k for k, v in self.hindi_translations.items()}
         return reverse_translations.get(hindi_answer, hindi_answer)
 
     def get_next_question(self, answer: Optional[str] = None) -> Union[Dict, Question]:
         if answer and self.current_question:
-            # Record the Q&A in chat history
+            
             current_q = self.current_flowchart[self.current_question]
             translated_q = self._translate_question(current_q)
             self.chat_history.append({
@@ -603,14 +603,14 @@ class ChatbotCore:
                 "answer": answer
             })
             
-            # Translate answer back to English if in Hindi mode
+            
             if self.current_language == "hi":
                 answer = self._translate_answer_to_english(answer)
             
-            # Get next step based on answer
+        
             next_step = current_q.next_steps[answer]
             
-            # If it's a diagnosis, return it with formatted output
+            
             if isinstance(next_step, dict) and "diagnosis" in next_step:
                 diagnosis = next_step["diagnosis"]
                 translated_category = self.hindi_translations.get(diagnosis.category, diagnosis.category) if self.current_language == "hi" else diagnosis.category
@@ -629,14 +629,14 @@ class ChatbotCore:
                     }
                 }
             
-            # Otherwise, set current question to next question
+            
             self.current_question = next_step
         
-        # Return the current question
+        
         question = self.current_flowchart[self.current_question]
         translated_q = self._translate_question(question)
         
-        # Return regular question format
+        
         return {
             "text": translated_q.text,
             "options": translated_q.options
@@ -645,12 +645,12 @@ class ChatbotCore:
     def compile_final_analysis(self) -> Dict:
         """Generate comprehensive final analysis based on all responses."""
         if not self.analysis_points:
-            # Default analysis if no specific points were captured
+            
             if self.current_concern == "ed":
                 return self.rules["final_analysis"]["ed"][self.current_language]["mixed"]
             return self.rules["final_analysis"]["pe"][self.current_language]["nonspecific"]
         
-        # Get the most relevant analysis based on collected points
+        
         primary_issue = max(set(self.analysis_points), key=self.analysis_points.count)
         analysis = self.rules["final_analysis"][self.current_concern][self.current_language].get(primary_issue)
         
@@ -659,7 +659,7 @@ class ChatbotCore:
                 return self.rules["final_analysis"]["ed"][self.current_language]["mixed"]
             return self.rules["final_analysis"]["pe"][self.current_language]["nonspecific"]
         
-        # Add additional findings to the analysis
+        
         other_issues = set(self.analysis_points) - {primary_issue}
         if other_issues:
             additional_causes = []

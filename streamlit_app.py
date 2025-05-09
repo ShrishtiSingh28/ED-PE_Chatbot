@@ -2,14 +2,14 @@ import streamlit as st
 from chatbot_core import ChatbotCore
 import os
 
-# Set page config
+
 st.set_page_config(
     page_title="Doc Rxmen",
     page_icon="🏥",
     layout="centered"
 )
 
-# Custom CSS
+
 st.markdown("""
 <style>
     .stButton button {
@@ -115,16 +115,16 @@ if 'chat_started' not in st.session_state:
 if 'current_response' not in st.session_state:
     st.session_state.current_response = None
 
-# Title
+
 st.title("Doc Rxmen")
 
-# Start Over button in sidebar
+
 with st.sidebar:
     if st.button("Start Over", key="sidebar_reset"):
         reset_session()
         st.rerun()
 
-# Language selection
+
 if not st.session_state.language_selected:
     st.header("Select Language / भाषा चुनें")
     language_options = st.session_state.chatbot.get_language_options()
@@ -136,7 +136,7 @@ if not st.session_state.language_selected:
             st.session_state.language_selected = True
             st.rerun()
 
-# Concern selection
+
 elif not st.session_state.concern_selected:
     concerns = st.session_state.chatbot.get_concern_options()
     st.header("Choose your concern" if st.session_state.chatbot.current_language == "en" 
@@ -150,17 +150,17 @@ elif not st.session_state.concern_selected:
             st.session_state.chat_started = True
             st.rerun()
 
-# Chat interface
+
 elif st.session_state.chat_started:
-    # Get next question if no current response
+    
     if not st.session_state.current_response:
         st.session_state.current_response = st.session_state.chatbot.get_next_question()
     
-    # Display question and options
+    
     if isinstance(st.session_state.current_response, dict):
         if "output_format" in st.session_state.current_response:
             if st.session_state.current_response["output_format"] == "initial":
-                # Display initial question
+                
                 sections = st.session_state.current_response["sections"]
                 st.markdown(sections["title"], unsafe_allow_html=True)
                 st.write(sections["text"])
@@ -173,7 +173,7 @@ elif st.session_state.chat_started:
                         st.rerun()
             
             elif st.session_state.current_response["output_format"] == "diagnosis":
-                # Display final analysis
+                
                 st.markdown('<div class="final-analysis">', unsafe_allow_html=True)
                 st.markdown('<div class="result-title">Final Analysis</div>', unsafe_allow_html=True)
                 
@@ -187,7 +187,7 @@ elif st.session_state.chat_started:
                     st.markdown(f'<div class="result-title">{sections["specialist_header"].replace("## ", "")}</div>', unsafe_allow_html=True)
                     st.markdown(f'<div class="result-value">{sections["specialist"]}</div>', unsafe_allow_html=True)
                 
-                # Display Chat History
+                
                 st.markdown('<div class="chat-history">', unsafe_allow_html=True)
                 st.markdown("### Consultation History")
                 for entry in st.session_state.chatbot.chat_history:
@@ -201,14 +201,14 @@ elif st.session_state.chat_started:
                 
                 st.markdown("</div>", unsafe_allow_html=True)
                 
-                # Center the Start Over button
+                
                 col1, col2, col3 = st.columns([1, 2, 1])
                 with col2:
                     if st.button("Start New Assessment", key="final_reset"):
                         reset_session()
                         st.rerun()
         else:
-            # Regular question display
+            
             st.write(f"### {st.session_state.current_response['text']}")
             cols = st.columns(len(st.session_state.current_response['options']))
             
@@ -218,5 +218,5 @@ elif st.session_state.chat_started:
                     st.session_state.current_response = next_response
                     st.rerun()
 
-# Footer
+
 st.markdown("---") 
